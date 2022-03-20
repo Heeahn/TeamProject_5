@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Tower_money {
 	
+	
 	public Tower_money() {}
 	
 	void inform(Parking_state state,Scanner scanner) {

@@ -18,6 +18,7 @@ public class Parking_state {
 		}
     }
 	
+	
 	public void print_state(){
 		System.out.println("==============================================\n << 현재 주차장 상태 >>");
 		for(int i =0 ;i<MAX;i++) {

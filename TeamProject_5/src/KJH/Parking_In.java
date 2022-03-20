@@ -18,6 +18,7 @@ public class Parking_In {
 		int hour =0;
 		int min =0;
 		
+		
 		System.out.println("======= 주차 하실 곳의 위치를 고르세요  =======");
 		System.out.println("======= 선택 :>  ======="); 
 		position = (scanner.nextInt());

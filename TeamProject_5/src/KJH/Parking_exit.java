@@ -17,6 +17,7 @@ public class Parking_exit {
 	void out(Parking_state state, Scanner scanner) {
 		
 		
+		
 		LocalDateTime localdate=LocalDateTime.now();
 		ArrayList<Parking_date> date_array = new ArrayList<>();
 		

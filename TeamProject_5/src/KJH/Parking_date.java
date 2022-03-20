@@ -14,6 +14,7 @@ public class Parking_date {
 	private int 주차위치;
 	private int 주차요금;
 	
+	
 	public Parking_date() {
 		// TODO Auto-generated constructor stub
 	}
