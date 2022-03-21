@@ -58,11 +58,12 @@ public class Parking_exit {
 		
 		int num =0;
 		int real_num=num-1;
-		System.out.println("주차하신 차량번호를 입력하세요");
+		System.out.println("=====  주차하신 차량번호를 입력하세요  =====");
 		num=scanner.nextInt();
 //		int i =0;
 		for (Parking_date board : date_array) {
 			if(num==board.get차량번호()) {
+				
 				System.out.println("차량번호\t주차연\t주차월\t주차일\t주차시\t주차분\t주차위치");
 				System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\n",
 						board.get차량번호(),board.get주차연(),board.get주차월(),
@@ -131,7 +132,7 @@ public class Parking_exit {
 					System.out.println("주차요금 :" +cal_money+"입니다.");
 					
 					state.box[board.get주차위치()]="[ ]";
-					System.out.println(board.get주차위치());
+//					System.out.println(board.get주차위치());
 					
 //					
 
@@ -158,6 +159,9 @@ public class Parking_exit {
 					break;
 				}
 				else {System.out.println("잘못된 입력값입니다.");}
+			}
+			else if(num!=board.get차량번호()) {
+				System.out.println("주차된 차량이 아닙니다."); break;
 			}
 			
 		
