@@ -43,7 +43,7 @@ public class Parking_main {
 		
 		/*	주의 사항
 		 * 	Parking_In   ---
-		 *  Parking_exit   |----  에  fileInput,fileOutput 용  txt file 생성 및 경로지정해야함   
+		 *  Parking_exit	|----  에  fileInput,fileOutput 용  txt file 생성 및 경로지정해야함   
 		 * 	Tower_money  ---   
 		 * 
 		 * Parking_In.java : FileOutputStream outputStream = new FileOutputStream("D:/java/차량입출차.txt" , true );
