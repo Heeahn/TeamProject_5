@@ -38,7 +38,7 @@ public class Parking_In {
 			date_array.add(date);
 			
 			try { // 예외[오류]가 발생할것 같은 코드 묶음 ( 예상 ) 				//  파일 경로   , 이어쓰기=true[옵션]
-				FileOutputStream outputStream = new FileOutputStream("C:/Users/lvblu/Desktop/JAVA/차량입출차.txt" , true );
+				FileOutputStream outputStream = new FileOutputStream("D:/java/차량입출차.txt" , true );
 				String 내보내기 = car_num+","+year+","+month+","+day+","
 								+hour+","+min+","+real_position+ "\n"; // , : 필드 구분용   \n : 제품 구분용
 						outputStream.write( 내보내기.getBytes() ); // 문자열 -> 바이트열

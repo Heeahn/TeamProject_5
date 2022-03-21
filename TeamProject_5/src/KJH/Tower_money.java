@@ -14,7 +14,7 @@ public class Tower_money {
 		
 		ArrayList<Parking_date> money_array = new ArrayList<>();
 		try { // try { } 안에 예외[오류] 발생할것 하는 코드 넣기 ( 예상 )
-			FileInputStream inputStream = new FileInputStream("C:/Users/lvblu/Desktop/JAVA/출차계산.txt"); // 1. 파일 입력객체 ( 파일경로)
+			FileInputStream inputStream = new FileInputStream("D:/java/출차계산.txt"); // 1. 파일 입력객체 ( 파일경로)
 			byte[] bytes = new byte[1024];
 			inputStream.read( bytes );
 			String 파일내용 = new String( bytes );

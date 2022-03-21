@@ -27,15 +27,6 @@ public class Parking_state {
 				if(i%4==3) System.out.println();				
 		}
 	}
-	
-//	public void 
-//	public void inCar(int incar){
-//		date_array[incar].
-//		date_array[incar].setName("");
-//		date_array[incar].setCar_num("");
-//		date_array[incar].setIn("");
-//		date_array[incar].setOut("");
-//		date_array[incar].setCharge(0);
-//	}
+
 	
 }
