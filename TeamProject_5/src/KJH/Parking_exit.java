@@ -136,13 +136,16 @@ public class Parking_exit {
 //					
 
 //					==============
-					Parking_date cal= new Parking_date(num, board.get주차연(), board.get주차월(), board.get주차일(), 
-						board.get주차시(), board.get주차분(), board.get주차위치()+1, cal_money);
+//					Parking_date cal= new Parking_date(num, board.get주차연(), board.get주차월(), board.get주차일(), 
+//						board.get주차시(), board.get주차분(), board.get주차위치()+1, cal_money);
+					
+					Parking_date cal= new Parking_date(num, (int)yearNow, (int)monthNow, (int)dayNow, 
+							(int)timeNow, (int)minNow, board.get주차위치()+1, cal_money);
 				
 				try { // 예외[오류]가 발생할것 같은 코드 묶음 ( 예상 ) 				//  파일 경로   , 이어쓰기=true[옵션]
 					FileOutputStream outputStream = new FileOutputStream("D:/java/출차계산.txt",true  );
-					String 내보내기 = num+","+board.get주차연()+","+board.get주차월()+","+board.get주차일()+","
-									+board.get주차시()+","+board.get주차분()+","+(board.get주차위치()+1)+","+cal_money+ "\n"; // , : 필드 구분용   \n : 제품 구분용
+					String 내보내기 = num+","+(int)yearNow+","+(int)monthNow+","+(int)dayNow+","
+									+(int)timeNow+","+(int)minNow+","+(board.get주차위치()+1)+","+cal_money+ "\n"; // , : 필드 구분용   \n : 제품 구분용
 							outputStream.write( 내보내기.getBytes() ); // 문자열 -> 바이트열
 				}catch( Exception e ) { // 예외[오류] 처리[잡기] : Exception 클래스
 				}
