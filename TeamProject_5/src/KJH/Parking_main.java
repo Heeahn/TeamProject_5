@@ -29,6 +29,8 @@ package KJH;
 클래스명 메인 클래스 TowerParking 입차 : Enter 출차 : Exit 매출확인 : Sales
  */
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 
 public class Parking_main {
@@ -38,7 +40,23 @@ public class Parking_main {
 		Scanner scanner =new Scanner(System.in);
 		Parking_menu menu = new Parking_menu();
 		menu.info(scanner);
-
+		
+		/*	주의 사항
+		 * 	Parking_In 
+		 *  Parking_exit
+		 * 	Tower_money  에  fileInput,fileOutput 용  txt file 생성 및 경로지정해야함 
+		 * 
+		 * Parking_In.java : FileOutputStream outputStream = new FileOutputStream("D:/java/차량입출차.txt" , true );
+		 * 					// 1.차량입출차.txt
+		 * ---------------------------------------------------------------------------------------------------------------------- 
+		 * Parking_exit.java : FileInputStream inputStream = new FileInputStream("D:/java/차량입출차.txt"); // 1. 파일 입력객체 ( 파일경로)
+		 * 					   FileOutputStream outputStream = new FileOutputStream("D:/java/출차계산.txt",true  );
+		 * 					// 1.차량입출차.txt
+		 * 					   2.출차계산.txt
+		 * ----------------------------------------------------------------------------------------------------------------------
+		 * Tower_money.java : FileInputStream inputStream = new FileInputStream("D:/java/출차계산.txt");
+		 * 					// 1. 출차계산
+		 */
 	
 		
 	
