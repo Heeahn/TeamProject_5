@@ -44,7 +44,7 @@ public class Parking_menu {
 			}
 			else {System.out.println(" 잘못된 입력입니다.");}
 			}
-		}catch(Exception e) {}
+		}catch(Exception e) {temp = new Scanner(System.in);}
 	}
 //	array_position
 }
