@@ -39,7 +39,7 @@ public class Parking_main {
 		Parking_menu menu = new Parking_menu();
 		menu.info(scanner);
 
-		
+	
 		
 	
 	}

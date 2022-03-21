@@ -1,5 +1,6 @@
 package KJH;
 
+import java.awt.datatransfer.Clipboard;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.time.LocalDateTime;
@@ -67,76 +68,75 @@ public class Parking_exit {
 						board.get차량번호(),board.get주차연(),board.get주차월(),
 						board.get주차일(),board.get주차시(),board.get주차분(),
 						board.get주차위치()+1);
-				System.out.println("출차 하시겠습니까?"); int sc= scanner.nextInt();
+				System.out.println("출차 하시겠습니까?"); 
 				System.out.println("1.예 2.아니오");
+				int sc= scanner.nextInt();
 				if(sc==1) {
-					int year1=Math.abs((int) (yearNow-board.get주차연()));
-					int month1=Math.abs((int) (monthNow-board.get주차월()));
-					int day1=Math.abs((int) (dayNow-board.get주차일()));
-					int time1=Math.abs((int) (timeNow-board.get주차시()));
-					int min1=Math.abs((int) (minNow-board.get주차분()));
+					int year1=	(int) (yearNow-board.get주차연());
+					int month1=	(int) (monthNow-board.get주차월());
+					int day1=	(int) (dayNow-board.get주차일());
+					int time1=	(int) (timeNow-board.get주차시());
+					int min1=	(int) (minNow-board.get주차분());
 					int cal_money = 0;
-					
-				
+//					
+//					
+//					
+//					
+//					long year2 = board.get주차연()*31104000L;//(60*60*24*30*12);
+////					double year3 = board.get주차연()*31104000;//(60*60*24*30*12);
+//					long month2=board.get주차월()*(60*60*24*30L);
+//					long day2=board.get주차일()*(60*60*24L);
+//					long time2=board.get주차시()*(60*60L);
+//					long min2=board.get주차분()*(60L);
+//					long total_park_time = year2+month2+day2+time2+min2;
+//
+//				
+//					long out5 =System.currentTimeMillis();//(밀리초)
+//					long out6 = (out5/1000)+62168472000L; //(1970년 보상 /초 단위)
+//					System.out.println("현재시간 초:"+out6);
+//					System.out.println("주차차량 시간:"+total_park_time);//(초);
+//					long final_time = out6-total_park_time; //(초단위)
+//				
+//					long cal_time_min = (out6)/60;
+//					long cal_month = cal_time_min/10000;
+//					System.out.println("계산분:"+cal_time_min);
+//					System.out.println("계산월:"+cal_month);
+//					System.out.println("막탐:"+final_time); // 초
 //					==== 돈계산
-					if(month1>=1&&day1>=1) {
+					if(month1<1&&day1>=1) {// 1달 미만 하루 이상
 						
-						cal_money = 50000;
+						cal_money = day1*50000;
 						
 					}
-					else if(day1<1&&time1>1) {
+					else if(month1>=1&&day1>=1) { //1달 이상 
+						cal_money = day1*50000+(month1*30)*50000;
+					}
+					else if(day1<1&&time1>1) { //하루 미만 1
 						cal_money =(min1/10)*1000 + time1*6000;;
 						
 					}
-					else if(min1>30&&time1>=1) {
+					else if(min1>30&&time1>=1) { // 하루 미만 2
 						cal_money =(min1/10)*1000 + time1*6000;
 						
 					}
-					else if(time1<1&&min1<60) {
+					else if(time1<1&&min1<60) { // 한시간 미만
 						cal_money =(min1/10)*1000; 
 						
 					}
-					else if(min1>30&&min1<60) {
+					else if(min1>30&&min1<60) {// 한시간 미만 30분 초과
 						cal_money = (min1/10)*1000;
 						}
-					else {cal_money=0;}
+					else {cal_money=0;} // 그 외 (30분 미만)
 					
-					if(cal_money>=50000) {
-					cal_money = 50000;
-					}
 					System.out.println("주차요금 :" +cal_money+"입니다.");
 					
 					state.box[board.get주차위치()]="[ ]";
 					System.out.println(board.get주차위치());
-//						state1.box[board.get주차위치()]="[ ]";
-//					}
-					//					====
-//							if(min1<=30) {
-//								System.out.println("주차요금 무료");
-//								cal_money = 0;
-//							}
-//							else if(min1>30) {
-//								cal_money =(min1/10)*1000;
-//								System.out.println("주차요금 :" +cal_money+"입니다.");
-//							}
-//							else if(min1>30&&time1>=1) {
-//								cal_money =(min1/10)*1000 + time1*6000;
-//								System.out.println("주차요금 :" +cal_money+"입니다.");
-//							}
-//							else if(time1>=1&&time1<24) {
-//								cal_money =(min1/10)*1000 + time1*6000;;
-//								System.out.println("주차요금 :" +cal_money+"입니다.");
-//							}
-//							else {
-//							cal_money = 50000;
-//							System.out.println("주차요금 :" +cal_money+"입니다.");
-//							}
 					
-//					===
-					
-						
-					
-				Parking_date cal= new Parking_date(num, board.get주차연(), board.get주차월(), board.get주차일(), 
+//					
+
+//					==============
+					Parking_date cal= new Parking_date(num, board.get주차연(), board.get주차월(), board.get주차일(), 
 						board.get주차시(), board.get주차분(), board.get주차위치()+1, cal_money);
 				
 				try { // 예외[오류]가 발생할것 같은 코드 묶음 ( 예상 ) 				//  파일 경로   , 이어쓰기=true[옵션]
@@ -147,9 +147,7 @@ public class Parking_exit {
 				}catch( Exception e ) { // 예외[오류] 처리[잡기] : Exception 클래스
 				}
 				System.out.println("알림]] 출차정보 저장 완료 "); 
-//				if(state1.box[board.get주차위치()].equals("[O]")) {
-//					state1.box[board.get주차위치()]="[ ]";
-//				}
+				
 				break;
 				
 				}
